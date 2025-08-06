@@ -1,17 +1,21 @@
 {
   "name": "node-nvm-update",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Automatically update Node.js to the latest LTS version using nvm",
   "main": "dist/index.js",
+  "type": "module",
   "bin": {
     "node-nvm-update": "dist/cli.js"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "postinstall": "chmod +x dist/cli.js",
-    "prepublish": "npm run build",
-    "start": "node dist/cli.js"
+    "prepublishOnly": "npm run build",
+    "start": "node dist/cli.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "TitenQ <titenq@gmail.com>",
   "license": "GPL-3",
@@ -27,11 +31,12 @@
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   },
-  "dependencies": {
-    "commander": "^14.0.0"
+  "engines": {
+    "node": ">=18.3.0"
   },
   "os": [
-    "linux"
+    "linux",
+    "darwin"
   ],
   "repository": {
     "type": "git",
@@ -39,5 +44,6 @@
   },
   "bugs": {
     "url": "https://github.com/titenq/node-nvm-update/issues"
-  }
+  },
+  "homepage": "https://github.com/titenq/node-nvm-update#readme"
 }

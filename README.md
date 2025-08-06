@@ -22,6 +22,27 @@
 npx node-nvm-update
 ```
 
+## ❓ Prerequisites
+- [NVM](https://github.com/nvm-sh/nvm) installed
+- [Node.js](https://nodejs.org) >= 18.3.0
+- Linux
+
+## 🎛️ Command Options
+```bash
+npx node-nvm-update [options]
+
+Options:
+  -v, --version    Output the current version
+  -h, --help       Display help message
+
+Examples:
+  # Show version
+  npx node-nvm-update --version
+  
+  # Show help
+  npx node-nvm-update --help
+```
+
 ## 📤 Output Example
 ```bash
 🔍 Checking for latest LTS version...

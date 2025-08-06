@@ -4,7 +4,7 @@ import { existsSync } from 'node:fs';
 const isNvmInstalled = (): boolean => {
   try {
     const nvmDir = process.env.NVM_DIR || `${process.env.HOME}/.nvm`;
-    
+
     return existsSync(`${nvmDir}/nvm.sh`);
   } catch {
     return false;
@@ -33,15 +33,16 @@ export const updateNodeLTS = async (): Promise<void> => {
     console.log('⏳ Installing latest LTS version...');
 
     runNvmCommand('nvm install --lts --latest-npm');
-    runNvmCommand('nvm use --lts');
-    runNvmCommand('nvm alias default "lts/*"');
 
-    const version = runNvmCommand('node -v');
+    const installedVersion = runNvmCommand('nvm ls --no-colors | grep -o "v[0-9]\\+\\.[0-9]\\+\\.[0-9]\\+" | tail -1');
 
-    console.log(`✅ Node.js LTS updated to: ${version}`);
+    runNvmCommand(`nvm use ${installedVersion}`);
+    runNvmCommand(`nvm alias default ${installedVersion}`);
+
+    console.log(`✅ Node.js LTS updated to: ${installedVersion}`);
     console.log('💡 Default version set to latest LTS');
     console.log('\n🔄 Please restart your terminal for the changes to take full effect');
-    console.log('   or run: nvm use --lts');
+    console.log(`   or run: nvm use ${installedVersion}`);
 
   } catch (error: any) {
     console.error('❌ Error during update:');

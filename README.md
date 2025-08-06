@@ -26,12 +26,15 @@ npx node-nvm-update
 ```bash
 🔍 Checking for latest LTS version...
 ⏳ Installing latest LTS version...
-v22.17.1 is already installed.
-✅ Node.js LTS updated to: v22.17.1
+Downloading https://nodejs.org/dist/v22.18.0/node-v22.18.0-linux-x64.tar.xz...
+######################################################################## 100.0%
+Computing checksum with sha256sum
+Checksums matched!
+✅ Node.js LTS updated to: v22.18.0
 💡 Default version set to latest LTS
 
 🔄 Please restart your terminal for the changes to take full effect
-   or run: nvm use --lts
+   or run: nvm use v22.18.0
 ```
 
 ## 📜 License

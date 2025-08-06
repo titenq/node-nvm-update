@@ -1,11 +1,12 @@
 {
   "name": "node-nvm-update",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Automatically update Node.js to the latest LTS version using nvm",
   "main": "dist/index.js",
   "bin": {
     "node-nvm-update": "dist/cli.js"
   },
+  "files": ["dist"],
   "scripts": {
     "build": "tsc",
     "postinstall": "chmod +x dist/cli.js",
